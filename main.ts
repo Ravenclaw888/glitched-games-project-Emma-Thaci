@@ -682,6 +682,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
 })
 function Level_18 () {
     Level += 1
+    sprites.destroy(Level17_Sprite)
     tiles.setCurrentTilemap(tilemap`level21`)
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(2, 14))
 }
