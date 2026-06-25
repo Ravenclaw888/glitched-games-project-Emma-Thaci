@@ -200,7 +200,7 @@ function Level_24 () {
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(1, 14))
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Glitching, function (sprite, otherSprite) {
-    if (Math.percentChance(75)) {
+    if (Math.percentChance(1)) {
         tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
     } else {
         Player_Sprite.vy = -500
@@ -616,7 +616,26 @@ function Level_17 () {
         b b b b b b b b b b b b b b b b 
         b b b b b b b b b b b b b b b b 
         `, SpriteKind.EventSprite)
+    Level17Sprite_2 = sprites.create(img`
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        `, SpriteKind.EventSprite)
     tiles.placeOnTile(Level17_Sprite, tiles.getTileLocation(10, 14))
+    tiles.placeOnTile(Level17_Sprite, tiles.getTileLocation(4, 14))
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(1, 14))
 }
 function Level_4 () {
@@ -1158,6 +1177,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.EventSprite, function (sprite, o
         tiles.placeOnTile(textSprite14, tiles.getTileLocation(4, 12))
         pause(1500)
         sprites.destroy(textSprite14)
+    } else if (Player_Sprite.overlapsWith(Level17Sprite_2)) {
+        Player_Sprite.vy = -400
     }
 })
 function Level_2 () {
@@ -1288,6 +1309,7 @@ let textSprite5: TextSprite = null
 let textSprite4: TextSprite = null
 let textSprite6: TextSprite = null
 let Level3Sprite: Sprite = null
+let Level17Sprite_2: Sprite = null
 let Level17_Sprite: Sprite = null
 let Ending: TextSprite = null
 let textSprite18: TextSprite = null
