@@ -72,16 +72,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, l
         Level_19()
     } else if (Level == 19) {
         Level_20()
-    } else if (Level == 21) {
+    } else if (Level == 20) {
         Level_21()
-    } else if (false) {
-    	
-    } else if (false) {
-    	
-    } else if (false) {
-    	
-    } else {
-    	
+    } else if (Level == 21) {
+        Level_22()
+    } else if (Level == 22) {
+        Level_23()
+    } else if (Level == 23) {
+        Level_24()
     }
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -189,14 +187,20 @@ function Level_7 () {
         `, SpriteKind.EventSprite)
     tiles.placeOnTile(Level7Sprite, tiles.getTileLocation(0, 9))
 }
+function Level_24 () {
+    sprites.destroy(GltichSprite)
+    sprites.destroy(Gltich2)
+    sprites.destroy(Gltich3)
+    sprites.destroy(Glitch4)
+    sprites.destroy(Glitch5)
+    sprites.destroy(Gltich_6)
+    sprites.destroy(textSprite10)
+    Level += 1
+    tiles.setCurrentTilemap(tilemap`level25`)
+    tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(1, 14))
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Glitching, function (sprite, otherSprite) {
-    if (Level == 20) {
-        tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
-    } else if (Level == 21) {
-        tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
-    } else {
-    	
-    }
+    tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
 })
 function IntroScene () {
     Arcade_game = sprites.create(img`
@@ -299,10 +303,86 @@ function IntroScene () {
     pause(200)
     sprites.destroy(Arcade_game)
 }
+function Level_22 () {
+    Level += 1
+    tiles.setCurrentTilemap(tilemap`level24`)
+    tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(1, 14))
+    tiles.placeOnTile(GltichSprite, tiles.getTileLocation(2, 14))
+    tiles.placeOnTile(Gltich2, tiles.getTileLocation(3, 14))
+    tiles.placeOnTile(Gltich3, tiles.getTileLocation(14, 13))
+    Glitch4 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . c c c c c c c . . . . . . . 
+        . . . f f f f f f f f f . . . . 
+        . . . 3 3 3 3 3 3 3 3 3 . . . . 
+        . . . 9 9 9 9 9 9 9 9 9 . . . . 
+        . f f f f f f f c c c c c c c . 
+        . . 9 9 9 9 9 3 3 3 3 3 3 3 . . 
+        . c c c c c c f f f f f f f f . 
+        . . . . . 9 9 9 9 9 9 9 9 9 . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Glitching)
+    tiles.placeOnRandomTile(Glitch4, assets.tile`myTile`)
+    Glitch5 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . c c c c c c c . . . . . . . 
+        . . . f f f f f f f f f . . . . 
+        . . . 3 3 3 3 3 3 3 3 3 . . . . 
+        . . . 9 9 9 9 9 9 9 9 9 . . . . 
+        . f f f f f f f c c c c c c c . 
+        . . 9 9 9 9 9 3 3 3 3 3 3 3 . . 
+        . c c c c c c f f f f f f f f . 
+        . . . . . 9 9 9 9 9 9 9 9 9 . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Glitching)
+    tiles.placeOnRandomTile(Glitch5, assets.tile`myTile`)
+    Gltich_6 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . c c c c c c c . . . . . . . 
+        . . . f f f f f f f f f . . . . 
+        . . . 3 3 3 3 3 3 3 3 3 . . . . 
+        . . . 9 9 9 9 9 9 9 9 9 . . . . 
+        . f f f f f f f c c c c c c c . 
+        . . 9 9 9 9 9 3 3 3 3 3 3 3 . . 
+        . c c c c c c f f f f f f f f . 
+        . . . . . 9 9 9 9 9 9 9 9 9 . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Glitching)
+    tiles.placeOnRandomTile(Gltich_6, assets.tile`myTile`)
+}
 function Level_15 () {
     Level += 1
     tiles.setCurrentTilemap(tilemap`level16`)
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(3, 13))
+}
+function Level_23 () {
+    Level += 1
+    tiles.setCurrentTilemap(tilemap`level24`)
+    tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(1, 14))
+    tiles.placeOnRandomTile(GltichSprite, assets.tile`myTile`)
+    tiles.placeOnRandomTile(Gltich3, assets.tile`myTile`)
+    tiles.placeOnRandomTile(Gltich2, assets.tile`myTile`)
+    tiles.placeOnRandomTile(Glitch4, assets.tile`myTile`)
+    tiles.placeOnRandomTile(Glitch5, assets.tile`myTile`)
+    tiles.placeOnRandomTile(Gltich_6, assets.tile`myTile`)
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (isAnimation == true) {
@@ -383,6 +463,9 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         )
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
+    Call_ending()
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, location) {
     if (Level == 15) {
         tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
@@ -391,12 +474,85 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, l
         tiles.placeOnTile(sprite, tiles.getTileLocation(3, 14))
     }
 })
+function Call_ending () {
+    sprites.destroy(Player_Sprite)
+    isAnimation = false
+    isGlitches = false
+    tiles.setCurrentTilemap(tilemap`level27`)
+    Arcade_game = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f f f . . . . . 
+        . . . f e 2 2 2 2 2 2 f . . . . 
+        . . . f 2 1 1 1 1 1 e f . . . . 
+        . . . f 2 1 1 1 1 1 2 f . . . . 
+        . . . f 2 1 1 1 1 1 2 f . . . . 
+        . . . f 2 1 1 1 1 1 2 f . . . . 
+        . . . f 2 e 2 2 e 2 2 f . . . . 
+        . . . f f 2 e e e 2 f f . . . . 
+        . . . . f 2 e 2 2 2 f . . . . . 
+        . . . . f 2 e e e 2 f . . . . . 
+        . . . . f 2 2 2 2 e f . . . . . 
+        . . . . f 2 e 2 2 2 f . . . . . 
+        . . . . f 2 2 2 2 2 f . . . . . 
+        `, SpriteKind.Arcade_Scene_Sprite)
+    tiles.placeOnTile(Arcade_game, tiles.getTileLocation(7, 8))
+    Arcade_game.scale += 8
+    pause(1000)
+    textSprite16 = textsprite.create("Wasn't that fun?")
+    tiles.placeOnTile(textSprite16, tiles.getTileLocation(5, 3))
+    pause(2000)
+    sprites.destroy(textSprite16)
+    pause(1000)
+    textSprite17 = textsprite.create("DId you EnjoY it???")
+    tiles.placeOnTile(textSprite16, tiles.getTileLocation(4, 3))
+    pause(2000)
+    sprites.destroy(textSprite17)
+    pause(1000)
+    Arcade_game.setImage(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f f f . . . . . 
+        . . . f e 2 2 2 2 2 2 f . . . . 
+        . . . f 2 f f f f f e f . . . . 
+        . . . f 2 f f f f f 2 f . . . . 
+        . . . f 2 f f f f f 2 f . . . . 
+        . . . f 2 f f f f f 2 f . . . . 
+        . . . f 2 e 2 2 e 2 2 f . . . . 
+        . . . f f 2 e e e 2 f f . . . . 
+        . . . . f 2 e 2 2 2 f . . . . . 
+        . . . . f 2 e e e 2 f . . . . . 
+        . . . . f 2 2 2 2 e f . . . . . 
+        . . . . f 2 e 2 2 2 f . . . . . 
+        . . . . f 2 2 2 2 2 f . . . . . 
+        `)
+    pause(2000)
+    Arcade_game.scale += -2
+    pause(2200)
+    Arcade_game.scale += -2
+    pause(2600)
+    Arcade_game.scale += -2
+    pause(3000)
+    sprites.destroy(Arcade_game)
+    pause(100)
+    tiles.setCurrentTilemap(tilemap`level26`)
+    pause(200)
+    tiles.setCurrentTilemap(tilemap`level27`)
+    textSprite18 = textsprite.create("BeCAUse WHO knOws wHeN yOu PLAy AgaiN?AD??")
+    pause(2000)
+    sprites.destroy(textSprite18)
+    pause(500)
+    Ending = textsprite.create("THE END")
+    Ending.setOutline(3, 6)
+}
 function Level_21 () {
     Level += 1
     tiles.setCurrentTilemap(tilemap`level23`)
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(0, 14))
     tiles.placeOnTile(GltichSprite, tiles.getTileLocation(3, 13))
-    GltichSprite = sprites.create(img`
+    Gltich2 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -414,8 +570,8 @@ function Level_21 () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Glitching)
-    tiles.placeOnTile(GltichSprite, tiles.getTileLocation(11, 9))
-    GltichSprite = sprites.create(img`
+    tiles.placeOnTile(Gltich2, tiles.getTileLocation(11, 9))
+    Gltich3 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -433,7 +589,7 @@ function Level_21 () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Glitching)
-    tiles.placeOnTile(GltichSprite, tiles.getTileLocation(14, 13))
+    tiles.placeOnTile(Gltich3, tiles.getTileLocation(14, 13))
 }
 function Level_17 () {
     Level += 1
@@ -545,6 +701,13 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         )
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
+    tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
+    if (Level == 23) {
+        textSprite10 = textsprite.create("Wow, it's getting worse")
+        tiles.placeOnTile(textSprite10, tiles.getTileLocation(2, 10))
+    }
+})
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Player_Sprite.vy == 0 && isAnimation == true) {
         Player_Sprite.vy = -300
@@ -640,7 +803,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(5, 12))
         textSprite15 = textsprite.create("Is that supposed to happen?")
         tiles.placeOnTile(textSprite15, tiles.getTileLocation(2, 10))
-        pause(3500)
+        pause(1000)
         sprites.destroy(textSprite15)
     }
 })
@@ -676,13 +839,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(1, 13))
     } else if (Level == 16) {
         tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(6, 1))
+    } else if (Level == 16) {
+        tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(14, 14))
     } else {
     	
     }
 })
 function Level_18 () {
     Level += 1
-    sprites.destroy(Level17_Sprite)
     tiles.setCurrentTilemap(tilemap`level21`)
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(2, 14))
 }
@@ -983,15 +1147,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.EventSprite, function (sprite, o
         pause(1000)
         sprites.destroy(textSprite14)
     } else if (Player_Sprite.overlapsWith(Level17_Sprite)) {
-        Player_Sprite.vy = -500
+        tiles.placeOnRandomTile(Player_Sprite, assets.tile`myTile4`)
     } else if (Player_Sprite.overlapsWith(Level20Sprite)) {
         sprites.destroy(otherSprite)
         textSprite14 = textsprite.create("What is that??")
         tiles.placeOnTile(textSprite14, tiles.getTileLocation(4, 12))
         pause(1500)
         sprites.destroy(textSprite14)
-    } else {
-    	
     }
 })
 function Level_2 () {
@@ -1123,8 +1285,18 @@ let textSprite4: TextSprite = null
 let textSprite6: TextSprite = null
 let Level3Sprite: Sprite = null
 let Level17_Sprite: Sprite = null
-let GltichSprite: Sprite = null
+let Ending: TextSprite = null
+let textSprite18: TextSprite = null
+let textSprite17: TextSprite = null
+let textSprite16: TextSprite = null
 let Arcade_game: Sprite = null
+let textSprite10: TextSprite = null
+let Gltich_6: Sprite = null
+let Glitch5: Sprite = null
+let Glitch4: Sprite = null
+let Gltich3: Sprite = null
+let Gltich2: Sprite = null
+let GltichSprite: Sprite = null
 let Level7Sprite: Sprite = null
 let textSprite8: TextSprite = null
 let Level14Sprite: Sprite = null
@@ -1140,19 +1312,19 @@ Player_Sprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . f f f . . . . . . . . 
-    . . . . f e e e f f f f . . . . 
-    . . . f f e e e e e e f f . . . 
-    . . . f e e e e e e e e f . . . 
-    . . . f d 6 f d d f 6 d f . . . 
-    . . . f d 1 f d d f 1 d f . . . 
-    . . . f d d d d d d d d f . . . 
-    . . f f d d d d d d d d f f . . 
-    . f 9 d f 9 9 9 9 9 9 f d 9 f . 
-    . f d 9 f 9 9 9 9 9 9 f 9 d f . 
-    . f d d f 9 9 9 9 9 9 f d d f . 
-    . . f f . f f f f f f . f f . . 
-    . . . . . f f . . f f . . . . . 
+    . . c c c c c c c . . . . . . . 
+    . . . f f f f f f f f f . . . . 
+    . . . 3 3 3 3 3 3 3 3 3 . . . . 
+    . . . 9 9 9 9 9 9 9 9 9 . . . . 
+    . f f f f f f f c c c c c c c . 
+    . . 9 9 9 9 9 3 3 3 3 3 3 3 . . 
+    . c c c c c c f f f f f f f f . 
+    . . . . . 9 9 9 9 9 9 9 9 9 . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 Player_Sprite.z = 1
 Player_Sprite.ay = 300
@@ -1183,63 +1355,923 @@ game.onUpdateInterval(200, function () {
             . . . . . f f . . f f . . . . . 
             `)
     }
-    if (GltichSprite) {
-        animation.runImageAnimation(
-        GltichSprite,
-        [img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . 7 7 f f f f f f f f f . . . . 
-            . . 7 7 7 7 7 7 c c c c . . . . 
-            . . 7 7 7 7 7 7 7 c c c c c . . 
-            . . . c c c c c c c c c c c c . 
-            . . c c c c f f f f f f f 3 3 3 
-            . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
-            . 9 9 9 9 9 9 9 9 9 . . . . . . 
-            . f f f f f f 9 9 9 9 9 . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `,img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . 3 3 3 3 3 3 3 . . . . . . 
-            . . . c c c c c c 3 3 3 . . . . 
-            . . . f f f f f c c c 3 3 3 3 . 
-            . . . 5 5 7 f 7 f c c c c . . . 
-            . . . . 5 5 f f f f f f c c c . 
-            . . f f f 5 7 f f 7 7 7 7 f . . 
-            . . . . . 5 5 5 f f 3 3 3 3 . . 
-            . . f f f f f 5 5 f f f 3 f . . 
-            . . . . 3 3 3 3 3 3 3 3 3 . . . 
-            . . . . f f f f f f f f f . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `,img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . 9 9 9 9 9 . . . . . . . . . 
-            . . f f f . 9 . . . . . . . . . 
-            . . 7 7 f f 9 9 9 9 9 9 . . . . 
-            . . . 5 5 7 f f f f 9 9 9 9 . . 
-            . . . . 5 5 7 7 f f f 7 7 7 . . 
-            . . f f f f . 7 7 7 7 7 . . . . 
-            . . 5 5 f f f 5 f f f f f f . . 
-            . . . 5 f f f f 5 5 5 . . . . . 
-            . . . . 5 5 5 5 5 5 . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `],
-        500,
-        true
-        )
+    if (isGlitches) {
+        if (Level == 20) {
+            animation.runImageAnimation(
+            GltichSprite,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Level == 21) {
+            animation.runImageAnimation(
+            GltichSprite,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Gltich2,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Gltich3,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Level == 22) {
+            animation.runImageAnimation(
+            GltichSprite,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Gltich2,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Gltich3,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Glitch4,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Glitch5,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Gltich_6,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Level == 22) {
+            animation.runImageAnimation(
+            GltichSprite,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Gltich2,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Gltich3,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Glitch4,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Glitch5,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+            animation.runImageAnimation(
+            Gltich_6,
+            [img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . 7 7 f f f f f f f f f . . . . 
+                . . 7 7 7 7 7 7 c c c c . . . . 
+                . . 7 7 7 7 7 7 7 c c c c c . . 
+                . . . c c c c c c c c c c c c . 
+                . . c c c c f f f f f f f 3 3 3 
+                . . . . 3 3 3 3 3 3 3 3 3 3 3 . 
+                . 9 9 9 9 9 9 9 9 9 . . . . . . 
+                . f f f f f f 9 9 9 9 9 . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . 3 3 3 3 3 3 3 . . . . . . 
+                . . . c c c c c c 3 3 3 . . . . 
+                . . . f f f f f c c c 3 3 3 3 . 
+                . . . 5 5 7 f 7 f c c c c . . . 
+                . . . . 5 5 f f f f f f c c c . 
+                . . f f f 5 7 f f 7 7 7 7 f . . 
+                . . . . . 5 5 5 f f 3 3 3 3 . . 
+                . . f f f f f 5 5 f f f 3 f . . 
+                . . . . 3 3 3 3 3 3 3 3 3 . . . 
+                . . . . f f f f f f f f f . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `,img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . 9 9 9 9 9 . . . . . . . . . 
+                . . f f f . 9 . . . . . . . . . 
+                . . 7 7 f f 9 9 9 9 9 9 . . . . 
+                . . . 5 5 7 f f f f 9 9 9 9 . . 
+                . . . . 5 5 7 7 f f f 7 7 7 . . 
+                . . f f f f . 7 7 7 7 7 . . . . 
+                . . 5 5 f f f 5 f f f f f f . . 
+                . . . 5 f f f f 5 5 5 . . . . . 
+                . . . . 5 5 5 5 5 5 . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        }
     }
 })
