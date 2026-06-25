@@ -438,6 +438,7 @@ function Hint () {
             ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
             ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
             `)
+        sprites.destroyAllSpritesOfKind(SpriteKind.EventSprite)
         if (Level == 1) {
             game.showLongText("Hit the purple boxes!", DialogLayout.Bottom)
         } else if (Level == 2) {
