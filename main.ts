@@ -1691,7 +1691,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Nothing, function (sprite, other
     sprites.destroy(textSprite18)
     pause(500)
     Ending = textsprite.create("THE END")
-    tiles.placeOnTile(Ending, tiles.getTileLocation(8, 8))
+    tiles.placeOnTile(Ending, tiles.getTileLocation(6, 8))
     Ending.z = 100
     Ending.setOutline(3, 6)
 })
