@@ -205,10 +205,14 @@ function Level_24 () {
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(1, 14))
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Glitching, function (sprite, otherSprite) {
-    if (Math.percentChance(50)) {
-        tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
-    } else {
-        Player_Sprite.vy = -500
+    if (Player_Sprite.overlapsWith(Gltich3) || (Player_Sprite.overlapsWith(Glitch5) || (Player_Sprite.overlapsWith(Glitch4) || (Player_Sprite.overlapsWith(GltichSprite) || Player_Sprite.overlapsWith(Gltich2))))) {
+        if (Math.percentChance(50)) {
+            tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
+        } else {
+            Player_Sprite.vy = -500
+        }
+    } else if (Player_Sprite.overlapsWith(Gltich_6)) {
+        tiles.placeOnTile(Gltich_6, tiles.getTileLocation(15, 13))
     }
 })
 function IntroScene () {
@@ -557,7 +561,7 @@ function Level_22 () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Glitching)
-    tiles.placeOnRandomTile(Gltich_6, assets.tile`myTile`)
+    tiles.placeOnTile(Gltich_6, tiles.getTileLocation(1, 7))
 }
 function Level_15 () {
     Level += 1
@@ -575,7 +579,7 @@ function Level_23 () {
     tiles.placeOnRandomTile(Gltich2, assets.tile`myTile`)
     tiles.placeOnRandomTile(Glitch4, assets.tile`myTile`)
     tiles.placeOnRandomTile(Glitch5, assets.tile`myTile`)
-    tiles.placeOnRandomTile(Gltich_6, assets.tile`myTile`)
+    tiles.placeOnTile(Gltich_6, tiles.getTileLocation(1, 7))
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (isAnimation == true) {
@@ -937,7 +941,7 @@ function Level_21 () {
     info.startCountdown(60)
     tiles.setCurrentTilemap(tilemap`level23`)
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(0, 14))
-    tiles.placeOnTile(GltichSprite, tiles.getTileLocation(3, 13))
+    tiles.placeOnTile(GltichSprite, tiles.getTileLocation(3, 12))
     Gltich2 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
