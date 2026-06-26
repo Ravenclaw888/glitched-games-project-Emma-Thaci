@@ -1229,8 +1229,10 @@ function Level_12 () {
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Nothing, function (sprite, otherSprite) {
     sprites.destroy(Player_Sprite)
+    info.stopCountdown()
     isAnimation = false
     isGlitches = false
+    HintAvalible = false
     NullSprite = sprites.create(img`
         f f f f f f f f f f f f f f f f 
         f f f f f f f f f f f f f f f f 
@@ -1396,12 +1398,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Nothing, function (sprite, other
     Arcade_game.scale += 8
     pause(1000)
     textSprite16 = textsprite.create("Wasn't that fun?")
-    tiles.placeOnTile(textSprite16, tiles.getTileLocation(5, 3))
     pause(2000)
     sprites.destroy(textSprite16)
     pause(1000)
     textSprite17 = textsprite.create("DId you EnjoY it???")
-    tiles.placeOnTile(textSprite17, tiles.getTileLocation(4, 3))
     pause(2000)
     sprites.destroy(textSprite17)
     pause(1000)
