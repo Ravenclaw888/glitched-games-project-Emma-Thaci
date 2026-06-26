@@ -558,6 +558,25 @@ function Level_22 () {
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.EventSprite)
     tiles.placeOnTile(Gltich_6, tiles.getTileLocation(1, 7))
+    Level22Sprite = sprites.create(img`
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        `, SpriteKind.EventSprite)
+    tiles.placeOnTile(Level22Sprite, tiles.getTileLocation(1, 14))
 }
 function Level_15 () {
     Level += 1
@@ -576,6 +595,25 @@ function Level_23 () {
     tiles.placeOnRandomTile(Glitch4, assets.tile`myTile`)
     tiles.placeOnRandomTile(Glitch5, assets.tile`myTile`)
     tiles.placeOnTile(Gltich_6, tiles.getTileLocation(1, 7))
+    Level23Sprite = sprites.create(img`
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        b b b b b b b b b b b b b b b b 
+        `, SpriteKind.EventSprite)
+    tiles.placeOnTile(Level23Sprite, tiles.getTileLocation(1, 14))
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (isAnimation == true) {
@@ -657,68 +695,6 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
-    Call_ending()
-})
-function HintFix () {
-    if (Level == 2) {
-        Level_2()
-    } else if (Level == 3) {
-        Level_3()
-    } else if (Level == 4) {
-        Level_4()
-    } else if (Level == 5) {
-        Level_5()
-    } else if (Level == 6) {
-        Level_6()
-    } else if (Level == 7) {
-        Level_7()
-    } else if (Level == 8) {
-        Level_8()
-    } else if (Level == 9) {
-        Level_9()
-    } else if (Level == 10) {
-        Level_10()
-    } else if (Level == 11) {
-        Level_11()
-    } else if (Level == 12) {
-        Level_12()
-    } else if (Level == 13) {
-        Level_13()
-    } else if (Level == 14) {
-        Level_14()
-    } else if (Level == 15) {
-        Level_15()
-    } else if (Level == 16) {
-        Level_16()
-    } else if (Level == 17) {
-        Level_17()
-    } else if (Level == 18) {
-        Level_18()
-    } else if (Level == 19) {
-        Level_19()
-    } else if (Level == 20) {
-        Level_20()
-    } else if (Level == 21) {
-        Level_21()
-    } else if (Level == 22) {
-        Level_22()
-    } else if (Level == 23) {
-        Level_23()
-    } else if (Level == 24) {
-        Level_24()
-    } else if (Level == 1) {
-        Level1_Create()
-    }
-}
-scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, location) {
-    if (Level == 15) {
-        tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
-    }
-    if (Level == 19) {
-        tiles.placeOnTile(sprite, tiles.getTileLocation(3, 14))
-    }
-})
-function Call_ending () {
     sprites.destroy(Player_Sprite)
     isAnimation = false
     isGlitches = false
@@ -931,7 +907,66 @@ function Call_ending () {
     pause(500)
     Ending = textsprite.create("THE END")
     Ending.setOutline(3, 6)
+})
+function HintFix () {
+    if (Level == 2) {
+        Level_2()
+    } else if (Level == 3) {
+        Level_3()
+    } else if (Level == 4) {
+        Level_4()
+    } else if (Level == 5) {
+        Level_5()
+    } else if (Level == 6) {
+        Level_6()
+    } else if (Level == 7) {
+        Level_7()
+    } else if (Level == 8) {
+        Level_8()
+    } else if (Level == 9) {
+        Level_9()
+    } else if (Level == 10) {
+        Level_10()
+    } else if (Level == 11) {
+        Level_11()
+    } else if (Level == 12) {
+        Level_12()
+    } else if (Level == 13) {
+        Level_13()
+    } else if (Level == 14) {
+        Level_14()
+    } else if (Level == 15) {
+        Level_15()
+    } else if (Level == 16) {
+        Level_16()
+    } else if (Level == 17) {
+        Level_17()
+    } else if (Level == 18) {
+        Level_18()
+    } else if (Level == 19) {
+        Level_19()
+    } else if (Level == 20) {
+        Level_20()
+    } else if (Level == 21) {
+        Level_21()
+    } else if (Level == 22) {
+        Level_22()
+    } else if (Level == 23) {
+        Level_23()
+    } else if (Level == 24) {
+        Level_24()
+    } else if (Level == 1) {
+        Level1_Create()
+    }
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, location) {
+    if (Level == 15) {
+        tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
+    }
+    if (Level == 19) {
+        tiles.placeOnTile(sprite, tiles.getTileLocation(3, 14))
+    }
+})
 function Level_21 () {
     Level += 1
     info.startCountdown(60)
@@ -1251,8 +1286,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
         tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(6, 1))
     } else if (Level == 16) {
         tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(14, 14))
-    } else {
-    	
     }
 })
 function Level_18 () {
@@ -1578,6 +1611,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.EventSprite, function (sprite, o
         Player_Sprite.vy = -400
     } else if (Player_Sprite.overlapsWith(Gltich_6)) {
         tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(15, 13))
+    } else if (Player_Sprite.overlapsWith(Level22Sprite)) {
+        sprites.destroy(otherSprite)
+        textSprite14 = textsprite.create("More??")
+        tiles.placeOnTile(textSprite14, tiles.getTileLocation(2, 12))
+        pause(1500)
+        sprites.destroy(textSprite14)
+    } else if (Player_Sprite.overlapsWith(Level23Sprite)) {
+        sprites.destroy(otherSprite)
+        textSprite14 = textsprite.create("AGAIN???")
+        tiles.placeOnTile(textSprite14, tiles.getTileLocation(2, 12))
+        pause(1500)
+        sprites.destroy(textSprite14)
     }
 })
 function Level_2 () {
@@ -1718,6 +1763,8 @@ let Ending: TextSprite = null
 let textSprite18: TextSprite = null
 let textSprite17: TextSprite = null
 let textSprite16: TextSprite = null
+let Level23Sprite: Sprite = null
+let Level22Sprite: Sprite = null
 let NullSprite: Sprite = null
 let Arcade_game: Sprite = null
 let textSprite10: TextSprite = null
