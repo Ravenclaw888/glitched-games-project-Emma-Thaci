@@ -1427,13 +1427,13 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Nothing, function (sprite, other
     sprites.destroy(Arcade_game)
     pause(100)
     textSprite16 = textsprite.create("Wasn't that fun?")
-    tiles.placeOnTile(textSprite16, tiles.getTileLocation(5, 8))
+    tiles.placeOnTile(textSprite16, tiles.getTileLocation(7, 8))
     textSprite16.z = 100
     pause(2000)
     sprites.destroy(textSprite16)
     pause(1000)
     textSprite17 = textsprite.create("DId you EnjoY it???")
-    tiles.placeOnTile(textSprite17, tiles.getTileLocation(5, 8))
+    tiles.placeOnTile(textSprite17, tiles.getTileLocation(7, 8))
     textSprite17.z = 100
     pause(2000)
     sprites.destroy(textSprite17)
@@ -1684,14 +1684,14 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Nothing, function (sprite, other
         ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         `)
     pause(200)
-    textSprite18 = textsprite.create("BeCAUse WHO knOws wHeN yOu PLAy AgaiN?AD??")
+    textSprite18 = textsprite.create("PlEASe DOn'T LEavEE!")
     textSprite18.z = 100
-    tiles.placeOnTile(textSprite18, tiles.getTileLocation(5, 8))
+    tiles.placeOnTile(textSprite18, tiles.getTileLocation(7, 8))
     pause(2000)
     sprites.destroy(textSprite18)
     pause(500)
     Ending = textsprite.create("THE END")
-    tiles.placeOnTile(Ending, tiles.getTileLocation(5, 8))
+    tiles.placeOnTile(Ending, tiles.getTileLocation(8, 8))
     Ending.z = 100
     Ending.setOutline(3, 6)
 })
