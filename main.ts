@@ -205,14 +205,10 @@ function Level_24 () {
     tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(1, 14))
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Glitching, function (sprite, otherSprite) {
-    if (Player_Sprite.overlapsWith(Gltich3) || (Player_Sprite.overlapsWith(Glitch5) || (Player_Sprite.overlapsWith(Glitch4) || (Player_Sprite.overlapsWith(GltichSprite) || Player_Sprite.overlapsWith(Gltich2))))) {
-        if (Math.percentChance(50)) {
-            tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
-        } else {
-            Player_Sprite.vy = -500
-        }
-    } else if (Player_Sprite.overlapsWith(Gltich_6)) {
-        tiles.placeOnTile(Gltich_6, tiles.getTileLocation(15, 13))
+    if (Math.percentChance(50)) {
+        tiles.placeOnRandomTile(sprite, assets.tile`myTile`)
+    } else {
+        Player_Sprite.vy = -500
     }
 })
 function IntroScene () {
@@ -560,7 +556,7 @@ function Level_22 () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Glitching)
+        `, SpriteKind.EventSprite)
     tiles.placeOnTile(Gltich_6, tiles.getTileLocation(1, 7))
 }
 function Level_15 () {
@@ -1580,6 +1576,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.EventSprite, function (sprite, o
         sprites.destroy(textSprite14)
     } else if (Player_Sprite.overlapsWith(Level17Sprite_2)) {
         Player_Sprite.vy = -400
+    } else if (Player_Sprite.overlapsWith(Gltich_6)) {
+        tiles.placeOnTile(Gltich_6, tiles.getTileLocation(0, 0))
     }
 })
 function Level_2 () {
