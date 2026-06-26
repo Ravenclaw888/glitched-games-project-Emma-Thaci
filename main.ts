@@ -1577,7 +1577,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.EventSprite, function (sprite, o
     } else if (Player_Sprite.overlapsWith(Level17Sprite_2)) {
         Player_Sprite.vy = -400
     } else if (Player_Sprite.overlapsWith(Gltich_6)) {
-        tiles.placeOnTile(Gltich_6, tiles.getTileLocation(0, 0))
+        tiles.placeOnTile(Player_Sprite, tiles.getTileLocation(15, 13))
     }
 })
 function Level_2 () {
