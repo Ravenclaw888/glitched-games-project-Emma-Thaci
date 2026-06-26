@@ -1,4 +1,4 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v4.0.14/---simulator","cdnUrl":"https://cdn.makecode.com","version":"0.1.3","target":"arcade","targetVersion":"4.0.14","repo":"ravenclaw888/glitched-games-project-emma-thaci"}
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v4.0.14/---simulator","cdnUrl":"https://cdn.makecode.com","version":"1.0.0","target":"arcade","targetVersion":"4.0.14","repo":"ravenclaw888/glitched-games-project-emma-thaci"}
 // total=2680253 new=9.10% cached=67.64% other=23.26%
 (function (ectx) {
 'use strict';
