@@ -11,4 +11,4 @@ How to play
 3. Time it takes to play
 - 10-15 minutes on first run through.
 4. Things to note
-- Makecode Arcade is known to have a difficult time with Github, so refreshing the page 2-3 times before playing can ensure a better user experience.
+- Makecode Arcade is known to have slow download on Github, so refreshing 2-3 times before playing allows for the best user experience. 
