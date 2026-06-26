@@ -1576,6 +1576,7 @@ isAnimation = false
 isGlitches = false
 HintAvalible = false
 EndTrue = false
+let CutsceneEnd = false
 IntroScene()
 Level = 1
 Player_Sprite = sprites.create(img`
@@ -1603,7 +1604,7 @@ controller.moveSprite(Player_Sprite, 100, 0)
 Player_Sprite.setStayInScreen(true)
 Level1_Create()
 game.onUpdateInterval(500, function () {
-    if (EndTrue) {
+    if (EndTrue && !(CutsceneEnd)) {
         sprites.destroy(Player_Sprite)
         isAnimation = false
         isGlitches = false
@@ -1777,7 +1778,7 @@ game.onUpdateInterval(500, function () {
         sprites.destroy(textSprite16)
         pause(1000)
         textSprite17 = textsprite.create("DId you EnjoY it???")
-        tiles.placeOnTile(textSprite16, tiles.getTileLocation(4, 3))
+        tiles.placeOnTile(textSprite17, tiles.getTileLocation(4, 3))
         pause(2000)
         sprites.destroy(textSprite17)
         pause(1000)
