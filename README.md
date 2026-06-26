@@ -1,26 +1,12 @@
- 
-
-
-> Open this page at [https://ravenclaw888.github.io/glitched-games-project-emma-thaci/](https://ravenclaw888.github.io/glitched-games-project-emma-thaci/)
-
-## Use as Extension
-
-This repository can be added as an **extension** in MakeCode.
-
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/ravenclaw888/glitched-games-project-emma-thaci** and import
-
-## Edit this project
-
-To edit this repository in MakeCode.
-
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/ravenclaw888/glitched-games-project-emma-thaci** and click import
-
-#### Metadata (used for search, rendering)
-
-* for PXT/arcade
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+How to play 
+1. Controls
+-   Up arrow - Jump
+-   Down Arrow - Super Jump
+-   Right Arrow - Right
+-   Left Arrow - Left
+2. Backstory
+- This is inspired off of old arcade games, many of which are slowly degrading due to the time since they were created. Plus, the ending isa bit horror-inspired based of science fiction films about computer sentience.
+3. Time it takes to play
+- 10-15 minutes on first run through.
+4. Things to note
+- Makecode Arcade is known to have a difficult time with Github, so refreshing the page 2-3 times before playing can ensure a better user experience.
