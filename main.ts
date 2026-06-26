@@ -1605,6 +1605,7 @@ Player_Sprite.setStayInScreen(true)
 Level1_Create()
 game.onUpdateInterval(500, function () {
     if (EndTrue && !(CutsceneEnd)) {
+        CutsceneEnd = true
         sprites.destroy(Player_Sprite)
         isAnimation = false
         isGlitches = false
